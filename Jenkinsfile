@@ -8,6 +8,10 @@ node {
     }
     
     stage "Showing diff", {
-        echo gitDifferences()
+        if (gitDifferences()) {
+            echo "Some differences we could open a pull request with..."
+        } else {
+            echo "Nothing interesting has been updated."
+        }
     }
 }
